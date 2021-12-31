@@ -47,8 +47,8 @@ function get_current_branch() {
   echo $(git_current_branch || echo "(no branch)")
 }
 
-local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
-PROMPT='${ret_status}%{$fg_bold[green]%}%p%{$fg[cyan]%} %c $(get_git_status) %{$reset_color%}'
+PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT+='%{$fg_bold[green]%}%p%{$fg[cyan]%} %c $(get_git_status)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[blue]%})%{$reset_color%}"
